@@ -35,9 +35,9 @@ fn handle_materials_instance() {
 }
 
 fn clear_ad() {
-    click_esc();
-    click_esc();
-    click_esc();
+    for _ in 0..3 {
+        click_esc();
+    }
 }
 
 fn switch_character(character: char) {
