@@ -1,0 +1,10 @@
+**/target
+**/Cargo.lock
+!/Cargo.lock
+**/*.rs.bk
+**/.idea/**
+.history/
+upload.png
+.env
+/tmp
+
