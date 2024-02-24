@@ -29,7 +29,6 @@ fn handle_materials_instance() {
     click('f');
     click('f');
     click('f');
-    click('f');
     click_function_key('7');
     click('h');
     thread::sleep(Duration::from_secs(280));
