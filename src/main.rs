@@ -7,7 +7,7 @@ fn main() {
     thread::sleep(Duration::from_secs(3));
     get_free_time();
     handle_materials_instance();
-    // loop_first();
+    loop_first();
     loop_second();
 }
 
@@ -52,7 +52,6 @@ fn get_free_time() {
 }
 
 fn switch_character(character: char) {
-    thread::sleep(Duration::from_secs(5));
     click_function_key(character);
     click('x');
     clear_ad();
@@ -61,15 +60,15 @@ fn switch_character(character: char) {
 }
 
 fn loop_first() {
-    for i in 3..7 {
-        switch_character((i as u8) as char);
+    for i in 3..8 {
+        switch_character(char::from_digit(i, 10).unwrap_or('0'));
     }
 }
 
 fn loop_second() {
-    click(',');
-    for i in 1..3 {
-        switch_character((i as u8) as char);
+    click('q');
+    for i in 1..4 {
+        switch_character(char::from_digit(i, 10).unwrap_or('0'));
     }
 }
 
