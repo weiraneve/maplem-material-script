@@ -53,7 +53,7 @@ fn get_free_time() {
 }
 
 fn switch_character(character: char) {
-    thread::sleep(Duration::from_secs(3));
+    thread::sleep(Duration::from_secs(5));
     click(character);
     click('x');
     clear_ad();
