@@ -51,6 +51,7 @@ fn get_free_time() {
 }
 
 fn switch_character(character: char) {
+    thread::sleep(Duration::from_secs(3));
     click(character);
     click('x');
     clear_ad();
@@ -65,6 +66,7 @@ fn loop_first() {
 }
 
 fn loop_second() {
+    click(',');
     for i in 1..3 {
         switch_character((i as u8) as char);
     }
