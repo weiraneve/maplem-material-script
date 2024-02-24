@@ -55,7 +55,6 @@ fn get_free_time() {
 fn switch_character(character: i32) {
     click_function_key(character);
     click('x');
-    thread::sleep(Duration::from_secs(3));
     clear_ad();
     get_free_time();
     handle_materials_instance();
