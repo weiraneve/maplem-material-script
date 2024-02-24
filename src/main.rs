@@ -33,6 +33,7 @@ fn handle_materials_instance() {
     click('h');
     thread::sleep(Duration::from_secs(280));
     click('b');
+    thread::sleep(Duration::from_secs(2));
     click('m');
     click('x');
     click('c');
