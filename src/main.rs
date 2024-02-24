@@ -7,7 +7,7 @@ fn main() {
     thread::sleep(Duration::from_secs(3));
     get_free_time();
     handle_materials_instance();
-    loop_first();
+    // loop_first();
     loop_second();
 }
 
@@ -99,6 +99,6 @@ fn click_function_key(function_letter: char) {
         '5' => enigo.key_click(Key::F5),
         '6' => enigo.key_click(Key::F6),
         '7' => enigo.key_click(Key::F7),
-        _ => None,
+        _ => (),
     }
 }
