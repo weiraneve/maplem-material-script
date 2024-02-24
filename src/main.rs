@@ -4,6 +4,7 @@ use std::time::Duration;
 use enigo::*;
 
 fn main() {
+    get_free_time();
     handle_materials_instance();
     loop_first();
     loop_second();
@@ -12,6 +13,7 @@ fn main() {
 fn handle_materials_instance() {
     click('m');
     click('g');
+    thread::sleep(Duration::from_secs(2));
     click('p');
     click('m');
     click('r');
@@ -40,10 +42,17 @@ fn clear_ad() {
     }
 }
 
+fn get_free_time() {
+    click('v');
+    click('n');
+    click('z');
+}
+
 fn switch_character(character: char) {
     click(character);
     click('x');
     clear_ad();
+    get_free_time();
     handle_materials_instance();
 }
 
