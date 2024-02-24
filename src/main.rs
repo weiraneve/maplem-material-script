@@ -4,6 +4,7 @@ use std::time::Duration;
 use enigo::*;
 
 fn main() {
+    thread::sleep(Duration::from_secs(3));
     get_free_time();
     handle_materials_instance();
     loop_first();
