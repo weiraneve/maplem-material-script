@@ -24,12 +24,12 @@ fn handle_materials_instance() {
     click('t');
     click_esc();
     click('e');
-    click_function_key('4');
+    click_function_key(4);
     click('x');
     click('f');
     click('f');
     click('f');
-    click_function_key('7');
+    click_function_key(7);
     click('h');
     thread::sleep(Duration::from_secs(280));
     click('b');
@@ -52,7 +52,7 @@ fn get_free_time() {
     click('z');
 }
 
-fn switch_character(character: char) {
+fn switch_character(character: i32) {
     click_function_key(character);
     click('x');
     clear_ad();
@@ -61,15 +61,15 @@ fn switch_character(character: char) {
 }
 
 fn loop_first() {
-    for i in 3..8 {
-        switch_character(char::from_digit(i, 10).unwrap_or('0'));
+    for character in 3..8 {
+        switch_character(character);
     }
 }
 
 fn loop_second() {
     click('q');
-    for i in 1..4 {
-        switch_character(char::from_digit(i, 10).unwrap_or('0'));
+    for character in 1..4 {
+        switch_character(character);
     }
 }
 
@@ -87,17 +87,17 @@ fn click_esc() {
     enigo.key_click(Key::Escape);
 }
 
-fn click_function_key(function_letter: char) {
+fn click_function_key(character: i32) {
     let mut enigo = Enigo::new();
     thread::sleep(Duration::from_secs(1));
-    match function_letter {
-        '1' => enigo.key_click(Key::F1),
-        '2' => enigo.key_click(Key::F2),
-        '3' => enigo.key_click(Key::F3),
-        '4' => enigo.key_click(Key::F4),
-        '5' => enigo.key_click(Key::F5),
-        '6' => enigo.key_click(Key::F6),
-        '7' => enigo.key_click(Key::F7),
+    match character {
+        1 => enigo.key_click(Key::F1),
+        2 => enigo.key_click(Key::F2),
+        3 => enigo.key_click(Key::F3),
+        4 => enigo.key_click(Key::F4),
+        5 => enigo.key_click(Key::F5),
+        6 => enigo.key_click(Key::F6),
+        7 => enigo.key_click(Key::F7),
         _ => (),
     }
 }
