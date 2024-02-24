@@ -37,6 +37,7 @@ fn handle_materials_instance() {
     click('m');
     click('x');
     click('c');
+    thread::sleep(Duration::from_secs(5));
 }
 
 fn clear_ad() {
