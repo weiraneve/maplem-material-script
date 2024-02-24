@@ -24,17 +24,17 @@ fn handle_materials_instance() {
     click('t');
     click_esc();
     click('e');
-    click('4');
+    click_function_key('4');
     click('x');
     click('f');
     click('f');
     click('f');
     click('f');
-    click('7');
+    click_function_key('7');
     click('h');
     thread::sleep(Duration::from_secs(280));
     click('b');
-    thread::sleep(Duration::from_secs(2));
+    thread::sleep(Duration::from_secs(4));
     click('m');
     click('x');
     click('c');
@@ -54,7 +54,7 @@ fn get_free_time() {
 
 fn switch_character(character: char) {
     thread::sleep(Duration::from_secs(5));
-    click(character);
+    click_function_key(character);
     click('x');
     clear_ad();
     get_free_time();
@@ -86,4 +86,19 @@ fn click_esc() {
     let mut enigo = Enigo::new();
     thread::sleep(Duration::from_secs(1));
     enigo.key_click(Key::Escape);
+}
+
+fn click_function_key(function_letter: char) {
+    let mut enigo = Enigo::new();
+    thread::sleep(Duration::from_secs(1));
+    match function_letter {
+        '1' => enigo.key_click(Key::F1),
+        '2' => enigo.key_click(Key::F2),
+        '3' => enigo.key_click(Key::F3),
+        '4' => enigo.key_click(Key::F4),
+        '5' => enigo.key_click(Key::F5),
+        '6' => enigo.key_click(Key::F6),
+        '7' => enigo.key_click(Key::F7),
+        _ => None,
+    }
 }
