@@ -61,12 +61,14 @@ fn switch_character(character: i32) {
 }
 
 fn loop_first() {
+    thread::sleep(Duration::from_secs(1));
     for character in 3..8 {
         switch_character(character);
     }
 }
 
 fn loop_second() {
+    thread::sleep(Duration::from_secs(285));
     click('q');
     for character in 1..4 {
         switch_character(character);
