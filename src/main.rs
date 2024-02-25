@@ -75,22 +75,6 @@ fn loop_second() {
     }
 }
 
-fn loop_character(max_loops: i32) {
-    let start_first_loop = 3;
-    let start_other_loops = 1;
-    let end = 7;
-    let cycle_length = end - start_other_loops + 1;
-
-    for num in 1..=max_loops {
-        let adjusted_num = if num <= end - start_first_loop + 1 {
-            num + start_first_loop - 1
-        } else {
-            (num - end + start_first_loop - 2) % cycle_length + start_other_loops
-        };
-        println!("{}", adjusted_num);
-    }
-}
-
 fn click(letter: char) {
     let mut enigo = Enigo::new();
     thread::sleep(Duration::from_secs(1));
