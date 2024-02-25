@@ -1,9 +1,10 @@
 [package]
 name = "maplem-material-script"
-version = "0.1.0"
+version = "1.0.1"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[profile.release]
+suffix = "-1.0.1"
 
 [dependencies]
 enigo = "0.1.3"
