@@ -41,7 +41,7 @@ fn handle_materials_instance() {
 }
 
 fn clear_ad() {
-    for _ in 0..3 {
+    for _ in 0..=2 {
         click_esc();
     }
 }
