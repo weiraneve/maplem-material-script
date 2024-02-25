@@ -7,7 +7,7 @@ fn main() {
     thread::sleep(Duration::from_secs(3));
     get_free_time();
     handle_materials_instance();
-    // loop_first();
+    loop_first();
     loop_second();
 }
 
@@ -65,11 +65,12 @@ fn loop_first() {
     for character in 3..=7 {
         switch_character(character);
     }
+    thread::sleep(Duration::from_secs(1));
+    click('q');
 }
 
 fn loop_second() {
     thread::sleep(Duration::from_secs(1));
-    click('q');
     for character in 1..=3 {
         switch_character(character);
     }
