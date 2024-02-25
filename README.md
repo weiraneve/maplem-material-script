@@ -23,6 +23,9 @@
 3. 然后在`playcover`软件界面，找到下载并导入好的`冒险岛·枫之传说`游戏，右键选择![](https://s11.ax1x.com/2024/02/25/pFaQlZj.png)
 
 导入[我自己设置好的键盘映射文件](https://github.com/weiraneve/maplem-material-script/blob/main/冒险岛：枫之传说.playmap)
+
+![](https://s11.ax1x.com/2024/02/25/pFalmkR.png)
+
 4. [下载对应的脚本](https://github.com/weiraneve/maplem-material-script/releases) 在这个页面下载最新的release软件，下载好执行文件之后，在自己的macos电脑上，打开终端，把脚本软件拖入到终端之中，就可以执行了。
 5. 使用脚本的时候，需要将游戏在电脑中打开，然后登陆到自己的第一个小号，一般是第二个角色。然后进入页面之后把可能遮挡界面的游戏内广告叉掉，然后按照刚刚说的方式执行脚本，然后在终端中执行之后，赶紧在电脑中切换到游戏中，聚焦在游戏上，脚本自带4秒钟的延迟开始执行。
 
