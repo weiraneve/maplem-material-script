@@ -1,3 +1,4 @@
+use std::env;
 use std::thread;
 use std::time::Duration;
 
@@ -5,10 +6,21 @@ use enigo::*;
 
 fn main() {
     thread::sleep(Duration::from_secs(3));
+    let character_count: i32 = handle_input_num(env::args().collect());
     get_free_time();
     handle_materials_instance();
-    loop_first();
-    loop_second();
+    loop_character(character_count);
+}
+
+fn handle_input_num(args: Vec<String>) -> i32 {
+    let input_number: i32 = match args[1].parse() {
+        Ok(num) => num,
+        Err(_) => {
+            eprintln!("请输入一个有效的数字。");
+            return MY_CHARACTER_COUNT;
+        }
+    };
+    return input_number;
 }
 
 fn handle_materials_instance() {
@@ -60,19 +72,26 @@ fn switch_character(character: i32) {
     handle_materials_instance();
 }
 
-fn loop_first() {
-    thread::sleep(Duration::from_secs(1));
-    for character in 3..=7 {
-        switch_character(character);
-    }
-    thread::sleep(Duration::from_secs(1));
-    click('q');
-}
+fn loop_character(max_loops: i32) {
+    let start_first_loop = 3;
+    let start_other_loops = 1;
+    let end = 7;
+    let cycle_length = end - start_other_loops + 1;
+    let mut previous_character_num = start_first_loop;
 
-fn loop_second() {
-    thread::sleep(Duration::from_secs(1));
-    for character in 1..=3 {
-        switch_character(character);
+    for num in 1..=max_loops {
+        let character_num = if num <= end - start_first_loop + 1 {
+            num + start_first_loop - 1
+        } else {
+            (num - end + start_first_loop - 2) % cycle_length + start_other_loops
+        };
+
+        if previous_character_num == end && character_num == start_other_loops {
+            click('q');
+        }
+
+        switch_character(character_num);
+        previous_character_num = character_num;
     }
 }
 
@@ -104,3 +123,5 @@ fn click_function_key(character: i32) {
         _ => (),
     }
 }
+
+const MY_CHARACTER_COUNT: i32 = 10;
