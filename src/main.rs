@@ -20,7 +20,7 @@ fn handle_materials_instance() {
     click('r');
     click('o');
     click('y');
-    click('6');
+    click_function_key(6);
     click('t');
     click_esc();
     click('e');
@@ -31,7 +31,7 @@ fn handle_materials_instance() {
     click('f');
     click_function_key(7);
     click('h');
-    thread::sleep(Duration::from_secs(280));
+    thread::sleep(Duration::from_secs(285));
     click('b');
     thread::sleep(Duration::from_secs(4));
     click('m');
