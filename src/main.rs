@@ -4,11 +4,8 @@ use std::time::Duration;
 use enigo::*;
 
 fn main() {
-    thread::sleep(Duration::from_secs(3));
-    get_free_time();
-    handle_materials_instance();
-    loop_first();
-    loop_second();
+    thread::sleep(Duration::from_secs(2));
+    click('[');
 }
 
 fn handle_materials_instance() {
@@ -43,6 +40,9 @@ fn handle_materials_instance() {
 fn clear_ad() {
     for _ in 0..=2 {
         click_esc();
+    }
+    for _ in 0..=2 {
+        click('[');
     }
 }
 
