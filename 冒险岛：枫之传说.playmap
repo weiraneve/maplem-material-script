@@ -456,6 +456,21 @@
 				<real>0.49915542602539065</real>
 			</dict>
 		</dict>
+		<dict>
+			<key>keyCode</key>
+			<integer>47</integer>
+			<key>keyName</key>
+			<string>[</string>
+			<key>transform</key>
+			<dict>
+				<key>size</key>
+				<real>3.6450000000000022</real>
+				<key>xCoord</key>
+				<real>0.894468895594279</real>
+				<key>yCoord</key>
+				<real>0.091595812197084764</real>
+			</dict>
+		</dict>
 	</array>
 	<key>draggableButtonModels</key>
 	<array/>
