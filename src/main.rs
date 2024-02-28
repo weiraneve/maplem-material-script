@@ -25,6 +25,7 @@ fn handle_materials_instance() {
     click_esc();
     click('e');
     click_function_key(4);
+    click(']');
     click('x');
     click('f');
     click('f');
