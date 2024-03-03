@@ -119,4 +119,4 @@ fn click_function_key(character: i32) {
     }
 }
 
-const INSTANCE_WAIT_TIME: i32 = 130;
+const INSTANCE_WAIT_TIME: i32 = 140;
