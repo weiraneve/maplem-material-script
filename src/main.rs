@@ -1,3 +1,4 @@
+use std::collections::HashMap;
 use std::thread;
 use std::time::Duration;
 
@@ -6,12 +7,12 @@ use enigo::*;
 fn main() {
     thread::sleep(Duration::from_secs(3));
     get_free_time();
-    handle_materials_instance();
+    handle_materials_instance(INSTANCE_WAIT_TIME);
     loop_first();
     loop_second();
 }
 
-fn handle_materials_instance() {
+fn handle_materials_instance(instance_wait_time: i32) {
     click('m');
     click('g');
     thread::sleep(Duration::from_secs(2));
@@ -32,7 +33,7 @@ fn handle_materials_instance() {
     click('f');
     click_function_key(7);
     click('h');
-    thread::sleep(Duration::from_secs(170));
+    thread::sleep(Duration::from_secs(instance_wait_time.clone() as u64));
     click('b');
     thread::sleep(Duration::from_secs(4));
     click('m');
@@ -56,18 +57,18 @@ fn get_free_time() {
     click('z');
 }
 
-fn switch_character(character: i32) {
+fn switch_character(character: i32, instance_wait_time: i32) {
     thread::sleep(Duration::from_secs(1));
     click_function_key(character);
     click('x');
     clear_ad();
     get_free_time();
-    handle_materials_instance();
+    handle_materials_instance(instance_wait_time);
 }
 
 fn loop_first() {
     for character in 3..=7 {
-        switch_character(character);
+        switch_character(character, init_first_loop_map().get(&character).unwrap().clone());
     }
     thread::sleep(Duration::from_secs(1));
     click('q');
@@ -75,8 +76,18 @@ fn loop_first() {
 
 fn loop_second() {
     for character in 1..=3 {
-        switch_character(character);
+        switch_character(character, init_second_loop_map().get(&character).unwrap().clone());
     }
+}
+
+fn init_first_loop_map() -> HashMap<i32, i32> {
+    let initial_data = vec![(3, 130), (4, 120), (5, 100), (6, 90), (7, 150)];
+    return initial_data.into_iter().collect();
+}
+
+fn init_second_loop_map() -> HashMap<i32, i32> {
+    let initial_data = vec![(1, 120), (2, 140), (3, 100)];
+    return initial_data.into_iter().collect();
 }
 
 fn click(letter: char) {
@@ -107,3 +118,5 @@ fn click_function_key(character: i32) {
         _ => (),
     }
 }
+
+const INSTANCE_WAIT_TIME: i32 = 140;
