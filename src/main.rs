@@ -81,12 +81,12 @@ fn loop_second() {
 }
 
 fn init_first_loop_map() -> HashMap<i32, i32> {
-    let initial_data = vec![(3, 130), (4, 120), (5, 100), (6, 90), (7, 150)];
+    let initial_data = vec![(3, 125), (4, 120), (5, 95), (6, 85), (7, 145)];
     return initial_data.into_iter().collect();
 }
 
 fn init_second_loop_map() -> HashMap<i32, i32> {
-    let initial_data = vec![(1, 130), (2, 140), (3, 100)];
+    let initial_data = vec![(1, 125), (2, 135), (3, 100), (4, 105)];
     return initial_data.into_iter().collect();
 }
 
@@ -119,4 +119,4 @@ fn click_function_key(character: i32) {
     }
 }
 
-const INSTANCE_WAIT_TIME: i32 = 140;
+const INSTANCE_WAIT_TIME: i32 = 135;
