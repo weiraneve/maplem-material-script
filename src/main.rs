@@ -81,7 +81,7 @@ fn loop_second() {
 }
 
 fn init_first_loop_map() -> HashMap<i32, i32> {
-    let initial_data = vec![(3, 125), (4, 120), (5, 95), (6, 85), (7, 145)];
+    let initial_data = vec![(3, 125), (4, 120), (5, 95), (6, 85), (7, 135)];
     return initial_data.into_iter().collect();
 }
 
