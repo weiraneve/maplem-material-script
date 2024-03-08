@@ -75,7 +75,7 @@ fn loop_first() {
 }
 
 fn loop_second() {
-    for character in 1..=3 {
+    for character in 1..=4 {
         switch_character(character, init_second_loop_map().get(&character).unwrap().clone());
     }
 }
@@ -86,7 +86,7 @@ fn init_first_loop_map() -> HashMap<i32, i32> {
 }
 
 fn init_second_loop_map() -> HashMap<i32, i32> {
-    let initial_data = vec![(1, 125), (2, 135), (3, 100), (4, 105)];
+    let initial_data = vec![(1, 125), (2, 135), (3, 100), (4, 100)];
     return initial_data.into_iter().collect();
 }
 
