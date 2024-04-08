@@ -22,11 +22,11 @@ fn handle_materials_instance(instance_wait_time: i32) {
     click('o');
     click('y');
     click_function_key(6);
-    click('t');
+    click(']');
     click_esc();
     click('e');
     click_function_key(4);
-    click(']');
+    click('t');
     click('x');
     click('f');
     click('f');
