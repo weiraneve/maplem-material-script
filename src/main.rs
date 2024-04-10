@@ -31,6 +31,7 @@ fn handle_materials_instance(instance_wait_time: i32) {
     click('f');
     click('f');
     click('f');
+    click('f');
     click_function_key(7);
     click('h');
     thread::sleep(Duration::from_secs(instance_wait_time.clone() as u64));
