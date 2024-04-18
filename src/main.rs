@@ -59,7 +59,7 @@ fn get_free_time() {
 }
 
 fn switch_character(character: i32, instance_wait_time: i32) {
-    thread::sleep(Duration::from_secs(1));
+    thread::sleep(Duration::from_secs(3));
     click_function_key(character);
     click('x');
     clear_ad();
