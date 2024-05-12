@@ -34,7 +34,7 @@ fn handle_materials_instance(instance_wait_time: i32) {
     click('f');
     click_function_key(7);
     click('h');
-    thread::sleep(Duration::from_secs(instance_wait_time.clone() as u64));
+    thread::sleep(Duration::from_secs(instance_wait_time as u64));
     click('b');
     thread::sleep(Duration::from_secs(4));
     click('m');
@@ -69,10 +69,7 @@ fn switch_character(character: i32, instance_wait_time: i32) {
 
 fn loop_first() {
     for character in 3..=7 {
-        switch_character(
-            character,
-            init_first_loop_map().get(&character).unwrap().clone(),
-        );
+        switch_character(character, *init_first_loop_map().get(&character).unwrap());
     }
     thread::sleep(Duration::from_secs(1));
     click('q');
@@ -80,21 +77,18 @@ fn loop_first() {
 
 fn loop_second() {
     for character in 1..=5 {
-        switch_character(
-            character,
-            init_second_loop_map().get(&character).unwrap().clone(),
-        );
+        switch_character(character, *init_second_loop_map().get(&character).unwrap());
     }
 }
 
 fn init_first_loop_map() -> HashMap<i32, i32> {
     let initial_data = vec![(3, 125), (4, 120), (5, 95), (6, 85), (7, 135)];
-    return initial_data.into_iter().collect();
+    initial_data.into_iter().collect()
 }
 
 fn init_second_loop_map() -> HashMap<i32, i32> {
     let initial_data = vec![(1, 130), (2, 135), (3, 100), (4, 100), (5, 100)];
-    return initial_data.into_iter().collect();
+    initial_data.into_iter().collect()
 }
 
 fn click(letter: char) {
