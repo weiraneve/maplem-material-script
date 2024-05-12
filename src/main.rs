@@ -69,7 +69,10 @@ fn switch_character(character: i32, instance_wait_time: i32) {
 
 fn loop_first() {
     for character in 3..=7 {
-        switch_character(character, init_first_loop_map().get(&character).unwrap().clone());
+        switch_character(
+            character,
+            init_first_loop_map().get(&character).unwrap().clone(),
+        );
     }
     thread::sleep(Duration::from_secs(1));
     click('q');
@@ -77,7 +80,10 @@ fn loop_first() {
 
 fn loop_second() {
     for character in 1..=5 {
-        switch_character(character, init_second_loop_map().get(&character).unwrap().clone());
+        switch_character(
+            character,
+            init_second_loop_map().get(&character).unwrap().clone(),
+        );
     }
 }
 
